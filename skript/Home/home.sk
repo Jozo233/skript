@@ -1,0 +1,15 @@
+options:
+    version: 1.0
+command /home [<string>]:
+    permission: bc.home
+    trigger:
+        if {basiccommands.%player's uuid%.home} is set:
+            teleport player to {basiccommands.%player's uuid%.home}
+            send "&6You have been teleported to your home."
+        else:
+            send "&6You have not set a home. Set a home with &c/sethome&6."
+command /sethome [<string>]:
+    permission: bc.home
+    trigger:
+        set {basiccommands.%player's uuid%.home} to location of player
+        send "&6Set your home to your current location. Come back to this location with &c/home&6."    
