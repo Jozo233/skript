@@ -1,0 +1,54 @@
+#-------------------------------------------------------------#
+#                                                             #
+#                                                             #
+#                                                   
+#-------------------------------------------------------------#
+options:
+    version: 1.2
+command /gmc [<player>]:
+    permission: bc.gmc
+    trigger:
+        if arg-1 is not set:
+            send "&6Your gamemode has been updated to &cCREATIVE &6mode."
+            set gamemode of player to creative
+        else:
+            send "&6Updated %arg-1%&6's gamemode has been updated to &cCREATIVE &6mode."
+            set gamemode of arg-1 to creative
+command /gms [<player>]:
+    permission: bc.gms
+    trigger:
+        if arg-1 is not set:
+            send "&6Your gamemode has been updated to &cSURVIVAL &6mode."
+            set gamemode of player to survival
+        else:
+            send "&6Updated %arg-1%&6's gamemode has been updated to &cSURVIVAL &6mode."
+            set gamemode of arg-1 to survival
+command /gma [<player>]:
+    permission: bc.gma
+    trigger:
+        if arg-1 is not set:
+            send "&6Your gamemode has been updated to &cADVENTURE &6mode."
+            set gamemode of player to adventure
+        else:
+            send "&6Updated %arg-1%&6's gamemode has been updated to &cADVENTURE &6mode."
+            set gamemode of arg-1 to adventure        
+command /gmsp [<player>]:
+    permission: bc.gmsp
+    trigger:
+        if arg-1 is not set:
+            send "&6Your gamemode has been updated to &cSPECTATOR &6mode."
+            set gamemode of player to spectator
+        else:
+            send "&6Updated %arg-1%&6's gamemode has been updated to &cSPECTATOR &6mode."
+            set gamemode of arg-1 to spectator
+command /spawn [<string>]:
+    permission: bc.spawn
+    trigger:
+        teleport player to {basicommands.spawn}   
+        send "&6Teleported to spawn."
+command /setspawn [<string>]:
+    permission: bc.setspawn
+    trigger:
+        set {basiccomamnds.spawn} to location of player
+        send "&6Updated to location of spawn to your position!"
+
